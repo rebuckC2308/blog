@@ -3,11 +3,11 @@ import { View, Text, StyleSheet, FlatList, Button } from "react-native";
 import BlogContext from "../context/BlogContext";
 
 const IndexScreen = () => {
-  const { data, addBlogPost } = useContext(BlogContext);
+  const { data, addBlogpost } = useContext(BlogContext);
   return (
     <View>
       <Text>Index Screen</Text>
-      <Button title="Add Blog Post" onPress={addBlogPost} />
+      <Button title="Add Blog Post" onPress={addBlogpost} />
       <FlatList
         data={data}
         keyExtractor={(blogPost) => blogPost.title}
