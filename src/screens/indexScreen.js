@@ -4,6 +4,7 @@ import { Context } from "../context/BlogContext";
 
 const IndexScreen = () => {
   const { state, addBlogpost } = useContext(Context);
+
   return (
     <View>
       <Text>Index Screen</Text>
