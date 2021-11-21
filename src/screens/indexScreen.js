@@ -11,11 +11,10 @@ import {
 } from "react-native";
 
 const IndexScreen = ({ navigation }) => {
-  const { state, addBlogpost, deleteBlogpost } = useContext(Context);
+  const { state, deleteBlogpost } = useContext(Context);
 
   return (
     <View>
-      <Button title="Add Blog Post" onPress={addBlogpost} />
       <FlatList
         data={state}
         keyExtractor={(blogPost) => blogPost.title}
@@ -38,6 +37,16 @@ const IndexScreen = ({ navigation }) => {
       />
     </View>
   );
+};
+
+IndexScreen.navigationOptions = ({ navigation }) => {
+  return {
+    headerRight: () => (
+      <TouchableOpacity onPress={() => navigation.navigate("Create")}>
+        <Feather name="plus" size={30} />
+      </TouchableOpacity>
+    ),
+  };
 };
 
 const styles = StyleSheet.create({
